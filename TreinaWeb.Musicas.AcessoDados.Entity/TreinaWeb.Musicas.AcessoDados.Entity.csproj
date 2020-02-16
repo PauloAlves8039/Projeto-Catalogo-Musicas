@@ -61,6 +61,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\TreinaWeb.Musicas.Comum.Entity\TreinaWeb.Musicas.Comum.Entity.csproj">
+      <Project>{81392627-94be-417d-8c08-55f1d0cbd94e}</Project>
+      <Name>TreinaWeb.Musicas.Comum.Entity</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TreinaWeb.Musicas.Dominio\TreinaWeb.Musicas.Dominio.csproj">
       <Project>{A6C05F15-25D6-498F-AD92-9DBACD72AC96}</Project>
       <Name>TreinaWeb.Musicas.Dominio</Name>
