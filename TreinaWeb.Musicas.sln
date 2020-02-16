@@ -9,6 +9,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dominio", "Dominio", "{C67A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreinaWeb.Musicas.Dominio", "TreinaWeb.Musicas.Dominio\TreinaWeb.Musicas.Dominio.csproj", "{A6C05F15-25D6-498F-AD92-9DBACD72AC96}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Acesso a Dados", "Acesso a Dados", "{49DC9464-9C7F-4A6A-A4F2-2BFD39B20C31}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreinaWeb.Musicas.AcessoDados.Entity", "TreinaWeb.Musicas.AcessoDados.Entity\TreinaWeb.Musicas.AcessoDados.Entity.csproj", "{D9D00A23-EDD3-4DE8-9709-D9B2542C8D40}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,12 +27,17 @@ Global
 		{A6C05F15-25D6-498F-AD92-9DBACD72AC96}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A6C05F15-25D6-498F-AD92-9DBACD72AC96}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A6C05F15-25D6-498F-AD92-9DBACD72AC96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9D00A23-EDD3-4DE8-9709-D9B2542C8D40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9D00A23-EDD3-4DE8-9709-D9B2542C8D40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9D00A23-EDD3-4DE8-9709-D9B2542C8D40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9D00A23-EDD3-4DE8-9709-D9B2542C8D40}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{A6C05F15-25D6-498F-AD92-9DBACD72AC96} = {C67AC632-5CA6-4C71-9FCE-9D707EAE960D}
+		{D9D00A23-EDD3-4DE8-9709-D9B2542C8D40} = {49DC9464-9C7F-4A6A-A4F2-2BFD39B20C31}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FCFA1E26-4C7B-485B-A1DF-3F18EEB29546}
