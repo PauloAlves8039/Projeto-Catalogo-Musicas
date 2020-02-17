@@ -54,6 +54,7 @@
     <Compile Include="Context\MusicasDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TypeConfiguration\AlbumTypeConfiguration.cs" />
+    <Compile Include="TypeConfiguration\MusicaTypeConfiguration.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
