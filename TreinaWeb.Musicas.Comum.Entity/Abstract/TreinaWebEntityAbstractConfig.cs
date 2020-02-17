@@ -4,6 +4,7 @@ namespace TreinaWeb.Musicas.Comum.Entity.Abstract
 {
     /// <summary>
     /// Classe de template genérica e abstrata, contém métodos responsáveis pelas configurações das entidades no banco de dados.
+    /// <remarks>Deve ser implementada nas classes derivadas.</remarks>
     /// </summary>
     public abstract class TreinaWebEntityAbstractConfig<TEntidade> : EntityTypeConfiguration<TEntidade>
         where TEntidade : class
