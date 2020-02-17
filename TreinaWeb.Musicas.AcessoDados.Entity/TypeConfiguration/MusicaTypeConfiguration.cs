@@ -9,7 +9,7 @@ namespace TreinaWeb.Musicas.AcessoDados.Entity.TypeConfiguration
     class MusicaTypeConfiguration : TreinaWebEntityAbstractConfig<Musica>
     {
         /// <summary>
-        /// Método sobrescrito para configurar os campos da tabela MUS_MUSICAS
+        /// Método sobrescrito para configurar os campos da tabela MUS_MUSICAS.
         /// </summary>
         protected override void ConfigurarCampoTabela()
         {
@@ -29,7 +29,7 @@ namespace TreinaWeb.Musicas.AcessoDados.Entity.TypeConfiguration
         }
 
         /// <summary>
-        /// Método sobrescrito para configurar a chave primaria da tabela MUS_MUSICAS
+        /// Método sobrescrito para configurar a chave primaria da tabela MUS_MUSICAS.
         /// </summary>
         protected override void ConfigurarChavePrimaria()
         {
@@ -47,7 +47,7 @@ namespace TreinaWeb.Musicas.AcessoDados.Entity.TypeConfiguration
         }
 
         /// <summary>
-        /// Método sobrescrito para configurar o nome da tabela para MUS_MUSICAS
+        /// Método sobrescrito para configurar o nome da tabela para MUS_MUSICAS.
         /// </summary>
         protected override void ConfigurarNomeTabela()
         {

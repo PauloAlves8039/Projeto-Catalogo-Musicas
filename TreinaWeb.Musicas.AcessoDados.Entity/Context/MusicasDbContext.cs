@@ -17,7 +17,7 @@ namespace TreinaWeb.Musicas.AcessoDados.Entity.Context
         public DbSet<Musica> Musicas { get; set; }
 
         /// <summary>
-        /// Construtor sobrescrito para configurar o carregamento de dados
+        /// Construtor sobrescrito para configurar o carregamento de dados.
         /// </summary>
         public MusicasDbContext()
         {
