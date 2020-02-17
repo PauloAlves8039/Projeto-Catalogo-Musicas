@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using TreinaWeb.Musicas.AcessoDados.Entity.Context;
 using TreinaWeb.Musicas.Dominio.Dominio;
@@ -17,14 +13,21 @@ namespace TreinaWeb.Musicas.Web.Controllers
     public class AlbunsController : Controller
     {
         private MusicasDbContext db = new MusicasDbContext();
-
-        // GET: Albuns
+        
+        /// <summary>
+        /// Action responsável pela listagem dos álbuns cadastrados.
+        /// </summary>
+        /// <returns>View com lista de álbuns inseridos.</returns>
         public ActionResult Index()
         {
             return View(db.Albuns.ToList());
         }
 
-        // GET: Albuns/Details/5
+        /// <summary>
+        /// Action responsável pela exibição dos detalhes de um álbum.
+        /// </summary>
+        /// <param name="id">Identifica o registro a ser detalhado.</param>
+        /// <returns>View com detalhes do álbum.</returns>
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -39,15 +42,20 @@ namespace TreinaWeb.Musicas.Web.Controllers
             return View(album);
         }
 
-        // GET: Albuns/Create
+        /// <summary>
+        /// Action responsável por direcionar registro do Album inserido.
+        /// </summary>
+        /// <returns>View com lista de álbuns.</returns>
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Albuns/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        /// <summary>
+        /// Action responsável pela criação de novos registros dos álbuns.
+        /// </summary>
+        /// <param name="album">Usado para referenciar a entidade Album.</param>
+        /// <returns>View com novo registro criado na lista de álbuns.</returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,Nome,Ano,Email,Observacoes")] Album album)
@@ -62,7 +70,11 @@ namespace TreinaWeb.Musicas.Web.Controllers
             return View(album);
         }
 
-        // GET: Albuns/Edit/5
+        /// <summary>
+        /// Action responsável por direcionar registro do álbum editado.
+        /// </summary>
+        /// <param name="id">Identifica o registro a ser editado.</param>
+        /// <returns>View atualizada com lista de álbuns.</returns>
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -77,9 +89,11 @@ namespace TreinaWeb.Musicas.Web.Controllers
             return View(album);
         }
 
-        // POST: Albuns/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        /// <summary>
+        /// Action responsável pela edição de registro do álbum.
+        /// </summary>
+        /// <param name="album">Usado para referenciar a entidade Album.</param>
+        /// <returns>View com registro editado na lista de álbuns.</returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,Nome,Ano,Email,Observacoes")] Album album)
@@ -93,7 +107,11 @@ namespace TreinaWeb.Musicas.Web.Controllers
             return View(album);
         }
 
-        // GET: Albuns/Delete/5
+        /// <summary>
+        /// Action responsável pela exclusão de álbum.
+        /// </summary>
+        /// <param name="id">Identifica o registro a ser excluído.</param>
+        /// <returns>View com registro da lista de álbuns</returns>
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -108,7 +126,11 @@ namespace TreinaWeb.Musicas.Web.Controllers
             return View(album);
         }
 
-        // POST: Albuns/Delete/5
+        /// <summary>
+        /// Action responsável pela confirmação da exclusão de álbum.
+        /// </summary>
+        /// <param name="id">Identifica o registro a ser confirmada a exclusão.</param>
+        /// <returns>View atualizada com lista de álbuns após a exclusão do álbum.</returns>
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
@@ -119,6 +141,10 @@ namespace TreinaWeb.Musicas.Web.Controllers
             return RedirectToAction("Index");
         }
 
+        /// <summary>
+        /// Método sobrescrito para remoção do objeto da memória, visando o encerramento da conexão com o banco de dados.
+        /// </summary>
+        /// <param name="disposing">Usado para direcionar o encerramento do objeto.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing)
