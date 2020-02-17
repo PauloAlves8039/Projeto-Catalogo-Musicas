@@ -52,6 +52,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Context\MusicasDbContext.cs" />
+    <Compile Include="Migrations\202002171408085_MigrationInicial.cs" />
+    <Compile Include="Migrations\202002171408085_MigrationInicial.designer.cs">
+      <DependentUpon>202002171408085_MigrationInicial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TypeConfiguration\AlbumTypeConfiguration.cs" />
     <Compile Include="TypeConfiguration\MusicaTypeConfiguration.cs" />
@@ -71,6 +76,11 @@
       <Project>{A6C05F15-25D6-498F-AD92-9DBACD72AC96}</Project>
       <Name>TreinaWeb.Musicas.Dominio</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202002171408085_MigrationInicial.resx">
+      <DependentUpon>202002171408085_MigrationInicial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

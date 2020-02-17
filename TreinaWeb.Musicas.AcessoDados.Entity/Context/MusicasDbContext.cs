@@ -36,8 +36,8 @@ namespace TreinaWeb.Musicas.AcessoDados.Entity.Context
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
             modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
             modelBuilder.Conventions.Remove<ManyToManyCascadeDeleteConvention>();
-            modelBuilder.Properties()
-                .Configure(p => p.HasColumnType("varhcar"));
+            //modelBuilder.Properties()
+            //    .Configure(p => p.HasColumnType("varchar"));
         }
     }
 }
