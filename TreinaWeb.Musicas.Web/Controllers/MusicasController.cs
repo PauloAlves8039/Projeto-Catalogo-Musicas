@@ -1,9 +1,12 @@
-﻿using System.Data.Entity;
+﻿using AutoMapper;
+using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web.Mvc;
 using TreinaWeb.Musicas.AcessoDados.Entity.Context;
 using TreinaWeb.Musicas.Dominio.Dominio;
+using TreinaWeb.Musicas.Web.ViewModels.Musica;
 
 namespace TreinaWeb.Musicas.Web.Controllers
 {
@@ -21,7 +24,7 @@ namespace TreinaWeb.Musicas.Web.Controllers
         public ActionResult Index()
         {
             var musicas = db.Musicas.Include(m => m.Album);
-            return View(musicas.ToList());
+            return View(Mapper.Map<List<Musica>, List<MusicaIndexViewModel>>(db.Musicas.ToList()));
         }
 
         /// <summary>
