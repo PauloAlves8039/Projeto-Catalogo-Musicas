@@ -42,7 +42,7 @@ namespace TreinaWeb.Musicas.Web.Controllers
             {
                 return HttpNotFound();
             }
-            return View(album);
+            return View(Mapper.Map<Album, AlbumIndexViewModel>(album));
         }
 
         /// <summary>
@@ -128,7 +128,7 @@ namespace TreinaWeb.Musicas.Web.Controllers
             {
                 return HttpNotFound();
             }
-            return View(album);
+            return View(Mapper.Map<Album, AlbumIndexViewModel>(album));
         }
 
         /// <summary>
