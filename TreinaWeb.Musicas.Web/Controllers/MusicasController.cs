@@ -63,17 +63,18 @@ namespace TreinaWeb.Musicas.Web.Controllers
         /// <returns>View com novo registro criado na lista de músicas.</returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Nome,IdAlbum")] Musica musica)
+        public ActionResult Create([Bind(Include = "Id,Nome,IdAlbum")] MusicaViewModel viewModel)
         {
             if (ModelState.IsValid)
             {
+                Musica musica = Mapper.Map<MusicaViewModel, Musica>(viewModel);
                 db.Musicas.Add(musica);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.IdAlbum = new SelectList(db.Albuns, "Id", "Nome", musica.IdAlbum);
-            return View(musica);
+            ViewBag.IdAlbum = new SelectList(db.Albuns, "Id", "Nome", viewModel.IdAlbum);
+            return View(viewModel);
         }
 
         /// <summary>
@@ -103,16 +104,17 @@ namespace TreinaWeb.Musicas.Web.Controllers
         /// <returns>View com registro editado na lista de músicas.</returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Nome,IdAlbum")] Musica musica)
+        public ActionResult Edit([Bind(Include = "Id,Nome,IdAlbum")] MusicaViewModel viewModel)
         {
             if (ModelState.IsValid)
             {
+                Musica musica = Mapper.Map<MusicaViewModel, Musica>(viewModel);
                 db.Entry(musica).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.IdAlbum = new SelectList(db.Albuns, "Id", "Nome", musica.IdAlbum);
-            return View(musica);
+            ViewBag.IdAlbum = new SelectList(db.Albuns, "Id", "Nome", viewModel.IdAlbum);
+            return View(viewModel);
         }
 
         /// <summary>

@@ -61,16 +61,17 @@ namespace TreinaWeb.Musicas.Web.Controllers
         /// <returns>View com novo registro criado na lista de álbuns.</returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Nome,Ano,Email,Observacoes")] Album album)
+        public ActionResult Create([Bind(Include = "Id,Nome,Ano,Email,Observacoes")] AlbumViewModel viewModel)
         {
             if (ModelState.IsValid)
             {
+                Album album = Mapper.Map<AlbumViewModel, Album>(viewModel);
                 db.Albuns.Add(album);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(album);
+            return View(viewModel);
         }
 
         /// <summary>
@@ -89,7 +90,7 @@ namespace TreinaWeb.Musicas.Web.Controllers
             {
                 return HttpNotFound();
             }
-            return View(album);
+            return View(Mapper.Map<Album, AlbumViewModel>(album));
         }
 
         /// <summary>
@@ -99,15 +100,16 @@ namespace TreinaWeb.Musicas.Web.Controllers
         /// <returns>View com registro editado na lista de álbuns.</returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Nome,Ano,Email,Observacoes")] Album album)
+        public ActionResult Edit([Bind(Include = "Id,Nome,Ano,Email,Observacoes")] AlbumViewModel viewModel)
         {
             if (ModelState.IsValid)
             {
+                Album album = Mapper.Map<AlbumViewModel, Album>(viewModel);
                 db.Entry(album).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(album);
+            return View(viewModel);
         }
 
         /// <summary>
