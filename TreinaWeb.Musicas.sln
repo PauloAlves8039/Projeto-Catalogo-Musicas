@@ -19,6 +19,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Repositorios", "Repositorio
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreinaWeb.Repositorios.Comum", "TreinaWeb.Repositorios.Comum\TreinaWeb.Repositorios.Comum.csproj", "{83A70007-25DF-4068-8DD0-5C5594AB45B0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreinaWeb.Repositorios.Comum.Entity", "TreinaWeb.Repositorios.Comum.Entity\TreinaWeb.Repositorios.Comum.Entity.csproj", "{4034ADFA-D347-427F-BB62-9CD1F42A44F9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{83A70007-25DF-4068-8DD0-5C5594AB45B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{83A70007-25DF-4068-8DD0-5C5594AB45B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{83A70007-25DF-4068-8DD0-5C5594AB45B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4034ADFA-D347-427F-BB62-9CD1F42A44F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4034ADFA-D347-427F-BB62-9CD1F42A44F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4034ADFA-D347-427F-BB62-9CD1F42A44F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4034ADFA-D347-427F-BB62-9CD1F42A44F9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -54,6 +60,7 @@ Global
 		{D9D00A23-EDD3-4DE8-9709-D9B2542C8D40} = {49DC9464-9C7F-4A6A-A4F2-2BFD39B20C31}
 		{81392627-94BE-417D-8C08-55F1D0CBD94E} = {49DC9464-9C7F-4A6A-A4F2-2BFD39B20C31}
 		{83A70007-25DF-4068-8DD0-5C5594AB45B0} = {B111E902-BBDD-46BF-8BBD-484945EE51B5}
+		{4034ADFA-D347-427F-BB62-9CD1F42A44F9} = {B111E902-BBDD-46BF-8BBD-484945EE51B5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FCFA1E26-4C7B-485B-A1DF-3F18EEB29546}

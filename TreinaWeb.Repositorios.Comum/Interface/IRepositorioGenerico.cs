@@ -5,7 +5,7 @@ namespace TreinaWeb.Repositorios.Comum.Interface
     /// <summary>
     /// Interface com métodos genéricos para utilização de um CRUD.
     /// </summary>
-    /// <remarks>Deve ser implementada nas classes derivadas nos repositórios.</remarks>
+    /// <remarks>Deve ser implementada na classe de repositório genérico.</remarks>
     public interface IRepositorioGenerico<TEntidade, TChave> where TEntidade : class
     {
         /// <summary>
@@ -36,7 +36,7 @@ namespace TreinaWeb.Repositorios.Comum.Interface
         /// <summary>
         /// Métoddo genérico para excluir registro da entidade.
         /// </summary>
-        /// <param name="entidade">Informa o objeto a ser excluído.</param>
+        /// <param name="entidade">Informa a entidade a ser excluída.</param>
         void Excluir(TEntidade entidade);
 
         /// <summary>
