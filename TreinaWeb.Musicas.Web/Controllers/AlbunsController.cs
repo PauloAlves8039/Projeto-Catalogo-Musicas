@@ -1,12 +1,12 @@
 ﻿using AutoMapper;
 using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
 using System.Net;
 using System.Web.Mvc;
 using TreinaWeb.Musicas.AcessoDados.Entity.Context;
 using TreinaWeb.Musicas.Dominio.Dominio;
+using TreinaWeb.Musicas.Repositorios.Entity.Entidades;
 using TreinaWeb.Musicas.Web.ViewModels.Album;
+using TreinaWeb.Repositorios.Comum.Interface;
 
 namespace TreinaWeb.Musicas.Web.Controllers
 {
@@ -15,15 +15,16 @@ namespace TreinaWeb.Musicas.Web.Controllers
     /// </summary>
     public class AlbunsController : Controller
     {
-        private MusicasDbContext db = new MusicasDbContext();
-        
+        /// <value>Propriedade de referência para os repositórios.</value>
+        private IRepositorioGenerico<Album, int> repositorioAlbuns = new AlbunsRepositorio(new MusicasDbContext());
+
         /// <summary>
         /// Action responsável pela listagem dos álbuns cadastrados.
         /// </summary>
         /// <returns>View com lista de álbuns inseridos.</returns>
         public ActionResult Index()
         {
-            return View(Mapper.Map<List<Album>, List<AlbumIndexViewModel>>(db.Albuns.ToList()));
+            return View(Mapper.Map<List<Album>, List<AlbumIndexViewModel>>(repositorioAlbuns.Selecionar()));
         }
 
         /// <summary>
@@ -37,7 +38,7 @@ namespace TreinaWeb.Musicas.Web.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Album album = db.Albuns.Find(id);
+            Album album = repositorioAlbuns.SelecionarPorId(id.Value);
             if (album == null)
             {
                 return HttpNotFound();
@@ -66,8 +67,7 @@ namespace TreinaWeb.Musicas.Web.Controllers
             if (ModelState.IsValid)
             {
                 Album album = Mapper.Map<AlbumViewModel, Album>(viewModel);
-                db.Albuns.Add(album);
-                db.SaveChanges();
+                repositorioAlbuns.Inserir(album);
                 return RedirectToAction("Index");
             }
 
@@ -85,7 +85,7 @@ namespace TreinaWeb.Musicas.Web.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Album album = db.Albuns.Find(id);
+            Album album = repositorioAlbuns.SelecionarPorId(id.Value);
             if (album == null)
             {
                 return HttpNotFound();
@@ -105,8 +105,7 @@ namespace TreinaWeb.Musicas.Web.Controllers
             if (ModelState.IsValid)
             {
                 Album album = Mapper.Map<AlbumViewModel, Album>(viewModel);
-                db.Entry(album).State = EntityState.Modified;
-                db.SaveChanges();
+                repositorioAlbuns.Alterar(album);
                 return RedirectToAction("Index");
             }
             return View(viewModel);
@@ -123,7 +122,7 @@ namespace TreinaWeb.Musicas.Web.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Album album = db.Albuns.Find(id);
+            Album album = repositorioAlbuns.SelecionarPorId(id.Value);
             if (album == null)
             {
                 return HttpNotFound();
@@ -140,23 +139,8 @@ namespace TreinaWeb.Musicas.Web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Album album = db.Albuns.Find(id);
-            db.Albuns.Remove(album);
-            db.SaveChanges();
+            repositorioAlbuns.ExcluirPorId(id);
             return RedirectToAction("Index");
-        }
-
-        /// <summary>
-        /// Método sobrescrito para remoção do objeto da memória, visando o encerramento da conexão com o banco de dados.
-        /// </summary>
-        /// <param name="disposing">Usado para direcionar o encerramento do objeto.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
         }
     }
 }
