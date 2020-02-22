@@ -13,7 +13,7 @@ namespace TreinaWeb.Repositorios.Comum.Entity.Repositorio
         where TEntidade : class
     {
         /// <value>Propriedade declarada para uso do DbContext.</value>
-        private DbContext _contexto;
+        protected DbContext _contexto;
 
         /// <summary>
         /// Construtor sobrescrito para uso do DbContext.
@@ -70,7 +70,7 @@ namespace TreinaWeb.Repositorios.Comum.Entity.Repositorio
         /// Método sobrescrito para selecionar lista da entidade.
         /// </summary>
         /// <returns>Lista de registros da entidade.</returns>
-        public List<TEntidade> Selecionar()
+        public virtual List<TEntidade> Selecionar()
         {
             return _contexto.Set<TEntidade>().ToList();
         }
@@ -80,7 +80,7 @@ namespace TreinaWeb.Repositorios.Comum.Entity.Repositorio
         /// </summary>
         /// <param name="id">Parâmetro de pesquisa de registro.</param>
         /// <returns>Registro da entiddade por id.</returns>
-        public TEntidade SelecionarPorId(TChave id)
+        public virtual TEntidade SelecionarPorId(TChave id)
         {
             return _contexto.Set<TEntidade>().Find(id);
         }
