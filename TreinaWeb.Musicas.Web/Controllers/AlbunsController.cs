@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net;
 using System.Web.Mvc;
 using TreinaWeb.Musicas.AcessoDados.Entity.Context;
@@ -25,6 +26,18 @@ namespace TreinaWeb.Musicas.Web.Controllers
         public ActionResult Index()
         {
             return View(Mapper.Map<List<Album>, List<AlbumIndexViewModel>>(repositorioAlbuns.Selecionar()));
+        }
+
+        /// <summary>
+        /// Action responsável por filtrar pesquisa de álbum pelo nome.
+        /// </summary>
+        /// <param name="pesquisa">Parâmetro de pesquisa de resgistro.</param>
+        /// <returns>Informação convertida de objeto Album no formato JSON.</returns>
+        public ActionResult FiltrarPorNome(string pesquisa)
+        {
+            List<Album> albuns = repositorioAlbuns.Selecionar().Where(a => a.Nome.Contains(pesquisa)).ToList();
+            List<AlbumIndexViewModel> viewModel = Mapper.Map<List<Album>, List<AlbumIndexViewModel>>(albuns);
+            return Json(viewModel, JsonRequestBehavior.AllowGet);
         }
 
         /// <summary>

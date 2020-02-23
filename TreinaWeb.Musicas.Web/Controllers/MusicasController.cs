@@ -33,10 +33,10 @@ namespace TreinaWeb.Musicas.Web.Controllers
         }
 
         /// <summary>
-        /// Action responsável por filtrar pesquisa por nome.
+        /// Action responsável por filtrar pesquisa de música por nome.
         /// </summary>
         /// <param name="pesquisa">Parâmetro de pesquisa de resgistro.</param>
-        /// <returns></returns>
+        /// <returns>Informação convertida de objeto Musica no formato JSON.</returns>
         public ActionResult FiltrarPorNome(string pesquisa)
         {
             List<Musica> musicas = repositorioMusicas.Selecionar().Where(a => a.Nome.Contains(pesquisa)).ToList();
