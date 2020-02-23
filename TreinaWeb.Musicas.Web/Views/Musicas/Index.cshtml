@@ -9,31 +9,97 @@
 <p>
     @Html.ActionLink("Adicionar Nova Música", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Nome)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Nome)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Nome)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Nome)
-        </td>
-        <td>
-            @Html.ActionLink("Editar", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Detalhes", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Excluir", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
+<br />
+<legend id="legendas">Pesquisar Música</legend>
+<label>Nome da Música</label>
+<div class="row">
+    <div class="col-md-3 col-sm-3 col-lg-3">
+        <input type="text" id="pesquisarMusica" class="form-control" />
+    </div>
+    <div class="col-md-1 col-lg-1 col-sm-1">
+        <button id="btnPesquisarMusica" class="btn btn-info">Pesquisar</button>
+    </div>
+    <div class="col-md-2 col-lg-2 col-sm-2">
+        &nbsp;&nbsp;&nbsp;<button id="btnLimparCampo" class="btn btn-default">Cancelar</button>
+    </div>
+</div>
+
+<br />
+<table class="table table-bordered" id="tblMusicas">
+    <thead id="MyHead2">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Detalhes", "Details", new { id = item.Id }) |
+                    @Html.ActionLink("Excluir", "Delete", new { id = item.Id })
+                </td>
+            </tr>
+        }
+    </tbody>
 
 </table>
+
+@section Scripts{
+    <script type="text/javascript">
+        /**
+         * Função para realizar uma pesquisa de músicas com requisição Ajax através de um Bind.
+        */
+        $(document).ready(function () {
+            $("#btnPesquisarMusica").click(function () {
+                var termoPesquisa = $("#pesquisarMusica").val();
+                $.ajax({
+                    method: "GET",
+                    url: "/Musicas/FiltrarPorNome?pesquisa=" + termoPesquisa,
+                    success: function (data) {
+                        $("#tblMusicas tbody > tr").remove();
+                        $.each(data, function (i, musica) {
+                            $("#tblMusicas tbody").append(
+                                "<tr>" +
+                                "   <td>" + musica.Nome + "</td>" +
+                                "   <td>" + musica.NomeAlbum + "</td>" +
+                                "   <td>" +
+                                "       <a href='/Albuns/Edit/" + musica.Id + "'>Editar | </a> " +
+                                "       <a href='/Albuns/Details/" + musica.Id + "'>Detalhes | </a> " +
+                                "       <a href='/Albuns/Delete/" + musica.Id + "'>Excluir</a> " +
+                                "   </td>" +
+                                "</tr>"
+                            );
+                        });
+                    },
+                    error: function (data) {
+                        alert("Houve um erro na pesquisa!")
+                    }
+                });
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        /**
+         * Esta função limpa o campo de pesquisa.
+        */
+        $("#btnLimparCampo").click(function () {
+            $('#pesquisarMusica').val('');
+        });
+    </script>
+}
