@@ -4,7 +4,7 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
+<h2 id="titulos">Adicionar Álbum</h2>
 
 
 @using (Html.BeginForm()) 
@@ -12,7 +12,7 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Album</h4>
+        <h4>Álbum</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
@@ -49,16 +49,26 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Adicionar" class="btn btn-default" />
+                &nbsp;
+                <button id="limparCampos" class="btn btn-danger">Cancelar</button>
             </div>
         </div>
     </div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Lista de Álbum", "Index")
 </div>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+    <script type="text/javascript">
+        $("#limparCampos").click(function () {
+            $('#Nome').val('');
+            $('#Ano').val('');
+            $('#Email').val('');
+            $('#Observacoes').val('');
+        });
+    </script>
 }
