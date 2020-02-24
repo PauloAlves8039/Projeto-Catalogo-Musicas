@@ -26,7 +26,7 @@ namespace TreinaWeb.Musicas.Web.AutoMapper
             CreateMap<Album, AlbumViewModel>();
 
             CreateMap<Musica, MusicaIndexViewModel>()
-                .ForMember(p => p.Nome, opt => 
+                .ForMember(p => p.NomeAlbum, opt => 
                 {
                     opt.MapFrom(src => src.Album.Nome);
                 });
