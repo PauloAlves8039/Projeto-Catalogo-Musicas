@@ -55,6 +55,15 @@ namespace TreinaWeb.Musicas.Web.Controllers
         }
 
         /// <summary>
+        /// Action para realizar o direcionamento do login do usuário.
+        /// </summary>
+        /// <returns>Para a view Home.</returns>
+        public ActionResult Login()
+        {
+            return View();
+        }
+
+        /// <summary>
         /// Action para realização do login do usuário.
         /// </summary>
         /// <param name="viewModel">Representa o contexto do UsuarioViewModel.</param>
