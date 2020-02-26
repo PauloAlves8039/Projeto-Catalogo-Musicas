@@ -15,6 +15,7 @@ namespace TreinaWeb.Musicas.Web.Controllers
     /// <summary>
     /// Controlador responsável pela ações referentes a entidade Musica.
     /// </summary>
+    [Authorize]
     public class MusicasController : Controller
     {
         /// <value>Propriedade de referência para os repositórios.</value>

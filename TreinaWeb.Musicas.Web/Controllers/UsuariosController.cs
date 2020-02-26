@@ -11,6 +11,7 @@ namespace TreinaWeb.Musicas.Web.Controllers
     /// <summary>
     /// Controlador responsável pelas ações referentes ao usuário.
     /// </summary>
+    [AllowAnonymous]
     public class UsuariosController : Controller
     {
         /// <summary>
@@ -97,6 +98,7 @@ namespace TreinaWeb.Musicas.Web.Controllers
         /// Action para realização do logoof do usuário.
         /// </summary>
         /// <returns>Para a view index da aplicação.</returns>
+        [Authorize]
         public ActionResult Logoff()
         {
             var authManager = HttpContext.GetOwinContext().Authentication;
