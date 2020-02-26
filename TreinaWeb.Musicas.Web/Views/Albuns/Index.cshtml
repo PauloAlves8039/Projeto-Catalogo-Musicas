@@ -18,15 +18,15 @@
         <input type="text" id="pesquisarAlbum" class="form-control" />
     </div>
     <div class="col-md-1 col-lg-1 col-sm-1">
-        <button id="btnPesquisarAlbum" class="btn btn-info">Pesquisar</button>
+        <button id="btnPesquisarAlbum" class="btn btn-primary">PESQUISAR</button>
     </div>
     <div class="col-md-2 col-lg-2 col-sm-2">
-        &nbsp;&nbsp;&nbsp;<button id="btnLimparCampo" class="btn btn-default">Cancelar</button>
+        &nbsp;&nbsp;&nbsp;<button id="btnLimparCampo" class="btn btn-default">CANCELAR</button>
     </div>
 </div>
 
 <br />
-<table class="table table-bordered" id="tblAlbuns">
+<table class="table table-bordered table-hover" id="tblAlbuns">
     <thead id="MyHead">
         <tr>
             <th>
@@ -108,10 +108,11 @@
     </script>
     <script>
         /**
-         * Esta função limpa o campo de pesquisa.
+         * Esta função limpa o campo de pesquisa e carregar página.
         */
         $("#btnLimparCampo").click(function () {
             $('#pesquisarAlbum').val('');
+            location.reload();
         });
     </script>
 }

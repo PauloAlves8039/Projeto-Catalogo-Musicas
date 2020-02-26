@@ -26,16 +26,16 @@
         <div class="form-group">
             @Html.LabelFor(model => model.IdAlbum, "IdAlbum", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownListFor(model => model.IdAlbum, (SelectList)ViewBag.DropDownAlbuns, new { @class = "form-control" })
+                @Html.DropDownListFor(model => model.IdAlbum, (SelectList)ViewBag.DropDownAlbuns, String.Empty, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.IdAlbum, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Adicionar" class="btn btn-success" />
+                <input type="submit" value="ADICIONAR" class="btn btn-success" />
                 &nbsp;
-                <button id="btnLimparCampos" class="btn btn-default">Cancelar</button>
+                <button id="btnLimparCampos" class="btn btn-default">CANCELAR</button>
             </div>
         </div>
     </div>
@@ -49,11 +49,12 @@
     @Scripts.Render("~/bundles/jqueryval")
     <script type="text/javascript">
         /**
-         * Esta função limpa todos os campos.
+         * Esta função limpa todos os campos e carrega a página.
         */
         $("#btnLimparCampos").click(function () {
             $('#Nome').val('');
             $('#IdAlbum').val('');
+            location.reload();
         });
     </script>
 }

@@ -49,9 +49,9 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Adicionar" class="btn btn-success" />
+                <input type="submit" value="ADICIONAR" class="btn btn-success" />
                 &nbsp;
-                <button id="btnLimparCampos" class="btn btn-default">Cancelar</button>
+                <button id="btnLimparCampos" class="btn btn-default">CANCELAR</button>
             </div>
         </div>
     </div>
@@ -65,13 +65,14 @@
     @Scripts.Render("~/bundles/jqueryval")
     <script type="text/javascript">
         /**
-         * Esta função limpa todos os campos.
+         * Esta função limpa todos os campos e carrega a página.
         */
         $("#btnLimparCampos").click(function () {
             $('#Nome').val('');
             $('#Ano').val('');
             $('#Email').val('');
             $('#Observacoes').val('');
+            location.reload();
         });
     </script>
 }

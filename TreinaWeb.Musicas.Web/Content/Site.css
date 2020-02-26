@@ -22,3 +22,27 @@ select,
 textarea {
     max-width: 280px;
 }
+
+/* Aplicação extra de estilo */
+:root {
+    --font-color-titulo: #1E90FF;
+}
+
+#titulo-principal {
+    color: var(--font-color-titulo);
+    text-align: center;
+}
+
+#titulos {
+    color: var(--font-color-titulo);
+    font-weight: bold;
+}
+
+#legendas, #subTitulos {
+    color: #00CD00;
+    font-weight: bold;
+}
+
+#MyHead, #MyHead2 {
+    background-color: #E8E8E8;
+}
