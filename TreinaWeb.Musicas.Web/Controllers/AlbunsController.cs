@@ -64,6 +64,7 @@ namespace TreinaWeb.Musicas.Web.Controllers
         /// Action responsável por direcionar registro do Album inserido.
         /// </summary>
         /// <returns>View com lista de álbuns.</returns>
+        [Authorize(Roles = "Administrador")]
         public ActionResult Create()
         {
             return View();
@@ -76,6 +77,7 @@ namespace TreinaWeb.Musicas.Web.Controllers
         /// <returns>View com novo registro criado na lista de álbuns.</returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrador")]
         public ActionResult Create([Bind(Include = "Id,Nome,Ano,Email,Observacoes")] AlbumViewModel viewModel)
         {
             if (ModelState.IsValid)

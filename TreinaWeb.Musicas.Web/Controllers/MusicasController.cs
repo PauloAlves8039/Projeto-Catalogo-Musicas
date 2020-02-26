@@ -68,6 +68,7 @@ namespace TreinaWeb.Musicas.Web.Controllers
         /// Action responsável por direcionar registro da Musica inserida em Album.
         /// </summary>
         /// <returns>View com lista de músicas.</returns>
+        [Authorize(Roles = "Administrador")]
         public ActionResult Create()
         {
             List<AlbumIndexViewModel> albuns = Mapper.Map<List<Album>, List<AlbumIndexViewModel>>(repositorioAlbuns.Selecionar());
@@ -83,6 +84,7 @@ namespace TreinaWeb.Musicas.Web.Controllers
         /// <returns>View com novo registro criado na lista de músicas.</returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrador")]
         public ActionResult Create([Bind(Include = "Id,Nome,IdAlbum")] MusicaViewModel viewModel)
         {
             if (ModelState.IsValid)
