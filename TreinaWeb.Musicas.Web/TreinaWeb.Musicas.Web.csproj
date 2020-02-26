@@ -228,10 +228,10 @@
     <Content Include="Views\Musicas\Details.cshtml" />
     <Content Include="Views\Musicas\Edit.cshtml" />
     <Content Include="Views\Musicas\Index.cshtml" />
+    <Content Include="Views\Usuarios\CriarUsuario.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Usuarios\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
