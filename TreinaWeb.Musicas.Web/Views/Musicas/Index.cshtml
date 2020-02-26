@@ -50,9 +50,7 @@
                     @Html.DisplayFor(modelItem => item.NomeAlbum)
                 </td>
                 <td>
-                    @Html.ActionLink("Editar", "Edit", new { id = item.Id }) |
-                    @Html.ActionLink("Detalhes", "Details", new { id = item.Id }) |
-                    @Html.ActionLink("Excluir", "Delete", new { id = item.Id })
+                    @Html.Partial("_Links_Musicas", item)
                 </td>
             </tr>
         }
