@@ -229,6 +229,7 @@
     <Content Include="Views\Musicas\Edit.cshtml" />
     <Content Include="Views\Musicas\Index.cshtml" />
     <Content Include="Views\Usuarios\CriarUsuario.cshtml" />
+    <Content Include="Views\Usuarios\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

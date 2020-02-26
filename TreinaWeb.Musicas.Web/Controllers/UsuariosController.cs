@@ -47,7 +47,7 @@ namespace TreinaWeb.Musicas.Web.Controllers
                 }
                 else
                 {
-                    ModelState.AddModelError("erroidentity", resultado.Errors.First());
+                    ModelState.AddModelError("erro_identity", resultado.Errors.First());
                     return View(viewModel);
                 }
             }
