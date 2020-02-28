@@ -24,6 +24,13 @@ pertencente a formação
 - JQuery v3.3.1
 - Ajax
 
+# Migrations Utilizadas
+`> Enable-Migrations -ProjectName TreinaWeb.Musicas.AcessoDados.Entity`
+
+`> Add-Migration MigrationInicial -ProjectName TreinaWeb.Musicas.AcessoDados.Entity -StartUpProjectName TreinaWeb.Musicas.AcessoDados.Entity`
+
+`> Update-Database -ProjectName TreinaWeb.Musicas.AcessoDados.Entity -StartUpProjectName TreinaWeb.Musicas.AcessoDados.Entity -Verbose`
+
 # Screenshot
 <html lang="pt-br">
 <head>
