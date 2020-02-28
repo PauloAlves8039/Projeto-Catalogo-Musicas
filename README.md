@@ -1,7 +1,7 @@
 # Projeto-Catalogo-Musicas
 Repositório de uma aplicação web para catalogar listas de músicas e álbuns utilizando o Framework ASP.NET MVC5.
 
-Na aplicação é possível realizada operações para listar, inserir, atualiza e excluir registros, que estão organizadas em views com fácil visualização.
+Na aplicação é possível realizar operações para listar, inserir, atualizar e excluir registros, no qual estão organizadas em views com fácil visualização.
 
 Esse projeto teve sua estrutura desenvolvida com base no curso 
 [C# (C Sharp) - ASP.NET MVC](https://www.treinaweb.com.br/curso/csharp-avancado-asp-net-mvc) 
@@ -31,7 +31,7 @@ pertencente a formação
 
 `> Update-Database -ProjectName TreinaWeb.Musicas.AcessoDados.Entity -StartUpProjectName TreinaWeb.Musicas.AcessoDados.Entity -Verbose`
 
-# Screenshot
+# Screenshots
 <html lang="pt-br">
 <head>
 </head>
