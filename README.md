@@ -1,12 +1,5 @@
 <h1 align="center">:cd: Projeto Catalogo Musicas</h1>
 
-<p align="center">
-  <a href="https://docs.microsoft.com/pt-br/aspnet/mvc/overview/getting-started/introduction/getting-started"><img src="https://img.shields.io/badge/ASP.NET-MVC5-blue"></a>
-  <a href="https://docs.microsoft.com/pt-br/ef/ef6/"><img src="https://img.shields.io/badge/E%20F-v6.4.0-orange"></a>
-  <a href="https://www.microsoft.com/pt-br/sql-server/sql-server-downloads"><img src="https://img.shields.io/badge/SqlServer-v12.0-brightgreen"></a>
-  <a href="https://getbootstrap.com/docs/3.3/"><img src="https://img.shields.io/badge/Bootstrap-v3.3.7-blueviolet"></a>
-</p>
-
 ## :computer: Projeto
 Repositório de uma aplicação web para catalogar listas de músicas e álbuns utilizando o Framework ASP.NET MVC5.
 
