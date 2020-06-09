@@ -1,4 +1,4 @@
-<h1 align="center">:cd: Projeto Catalogo Musicas</h1>
+<h1 align="center">:cd: Catalogo de Músicas</h1>
 
 ## :computer: Projeto
 Repositório de uma aplicação web para catalogar listas de músicas e álbuns utilizando o Framework ASP.NET MVC5.
@@ -51,4 +51,4 @@ Baixar repositório ```git clone https://github.com/PauloAlves8039/Projeto-Catal
 ![screenshot4](https://github.com/PauloAlves8039/Projeto-Catalogo-Musicas/blob/master/TreinaWeb.Musicas.Web/Images/screenshot4.png)
 
 ## Author
-:computer: [Paulo Alves](https://github.com/PauloAlves8039)
+:boy: [Paulo Alves](https://github.com/PauloAlves8039)
